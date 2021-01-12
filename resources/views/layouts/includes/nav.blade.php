@@ -12,34 +12,56 @@
                             <a href="pages/aboutus.html" class="nav-link not-a-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link">Events</a>
+                            <a href="javascript:;" class="nav-link not-a-link">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link">Write for Us</a>
+                            <a href="javascript:;" class="nav-link not-a-link">Write for Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link">In the Press</a>
+                            <a href="javascript:;" class="nav-link not-a-link">In the Press</a>
                         </li>
                     </ul>
-                    <ul class="navbar-top-right-menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link"><i class="mdi mdi-magnify"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link not-a-link">Sign in</a>
-                        </li>
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link text-white dropdown-toggle" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            </div>
+                        @endguest
                     </ul>
                 </div>
             </div>
             <div class="navbar-bottom">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <a class="navbar-brand" href="#"
-                        ><img src="{{asset('preneur-lab-news/images/logo.svg')}}" alt=""
-                            /></a>
+                        <a class="navbar-brand" href="{{route('home')}}">
+                            <h1 class="text-white font-weight-bold">{{__('Preneur Lab News')}}</h1>
+                        </a>
                     </div>
                     <div>
                         <button
@@ -91,23 +113,6 @@
                             </ul>
                         </div>
                     </div>
-                    <ul class="social-media">
-                        <li>
-                            <a href="#">
-                                <i class="mdi mdi-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="mdi mdi-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="mdi mdi-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>

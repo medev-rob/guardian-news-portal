@@ -3,6 +3,7 @@
     <div class="col-lg-9 stretch-card grid-margin">
         <div class="card">
             <div class="card-body">
+                {{dd($test['response'])}}
                 @foreach($test['response']['results'] as $item)
                     <div class="row">
                         <div class="col-sm-4 grid-margin">

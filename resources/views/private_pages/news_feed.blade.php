@@ -1,22 +1,4 @@
 
-<!-- partial -->
-<div class="flash-news-banner">
-    <div class="container">
-        <div class="d-lg-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <span class="badge badge-dark mr-3">Flash news</span>
-                <p class="mb-0">
-                    Lorem Ipsum has been the industry's standard dummy text ever
-                    since the 1500s.
-                </p>
-            </div>
-            <div class="d-flex">
-                <span class="mr-3 text-danger">Wed, March 4, 2020</span>
-                <span class="text-danger">30°C,London</span>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="content-wrapper">
     <div class="container">
@@ -85,18 +67,18 @@
                     <div class="card-body">
                         <h2>Category</h2>
                         <ul class="vertical-menu">
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">International</a></li>
-                            <li><a href="#">Finance</a></li>
-                            <li><a href="#">Health care</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Media</a></li>
-                            <li><a href="#">Administration</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Game</a></li>
-                            <li><a href="#">Art</a></li>
-                            <li><a href="#">Kids</a></li>
+                            <li><a href="javascript:;">Politics</a></li>
+                            <li><a href="javascript:;">International</a></li>
+                            <li><a href="javascript:;">Finance</a></li>
+                            <li><a href="javascript:;">Health care</a></li>
+                            <li><a href="javascript:;">Technology</a></li>
+                            <li><a href="javascript:;">Jobs</a></li>
+                            <li><a href="javascript:;">Media</a></li>
+                            <li><a href="javascript:;">Administration</a></li>
+                            <li><a href="javascript:;">Sports</a></li>
+                            <li><a href="javascript:;">Game</a></li>
+                            <li><a href="javascript:;">Art</a></li>
+                            <li><a href="javascript:;">Kids</a></li>
                         </ul>
                     </div>
                 </div>
@@ -146,203 +128,30 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="card-title">
-                                    Video
+                                    {{__('Image Gallery')}}
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-6 grid-margin">
-                                        <div class="position-relative">
-                                            <div class="rotate-img">
-                                                <img
-                                                    src="{{asset('preneur-lab-news/images/dashboard/home_7.jpg')}}"
-                                                    alt="thumb"
-                                                    class="img-fluid"
-                                                />
-                                            </div>
-                                            <div class="badge-positioned w-90">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center"
-                                                >
-                          <span
-                              class="badge badge-danger font-weight-bold"
-                          >Lifestyle</span
-                          >
-                                                    <div class="video-icon">
-                                                        <i class="mdi mdi-play"></i>
-                                                    </div>
+                                    @foreach($imagesGallery['response']['results'] as $item)
+                                        <div class="col-sm-4 grid-margin">
+                                            <div class="position-relative">
+                                                <div class="rotate-img">
+                                                    <a href="{{$item['webUrl']}}">
+                                                        <img
+                                                            src="{{$item['fields']['thumbnail']}}"
+                                                            alt="thumb"
+                                                            class="img-fluid w-100"
+                                                        />
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
 
-                                    <div class="col-sm-6 grid-margin">
-                                        <div class="position-relative">
-                                            <div class="rotate-img">
-                                                <img
-                                                    src="{{asset('preneur-lab-news/images/dashboard/home_8.jpg')}}"
-                                                    alt="thumb"
-                                                    class="img-fluid"
-                                                />
-                                            </div>
-                                            <div class="badge-positioned w-90">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center"
-                                                >
-                          <span
-                              class="badge badge-danger font-weight-bold"
-                          >National News</span
-                          >
-                                                    <div class="video-icon">
-                                                        <i class="mdi mdi-play"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6 grid-margin">
-                                        <div class="position-relative">
-                                            <div class="rotate-img">
-                                                <img
-                                                    src="{{asset('preneur-lab-news/images/dashboard/home_9.jpg')}}"
-                                                    alt="thumb"
-                                                    class="img-fluid"
-                                                />
-                                            </div>
-                                            <div class="badge-positioned w-90">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center"
-                                                >
-                          <span
-                              class="badge badge-danger font-weight-bold"
-                          >Lifestyle</span
-                          >
-                                                    <div class="video-icon">
-                                                        <i class="mdi mdi-play"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6 grid-margin">
-                                        <div class="position-relative">
-                                            <div class="rotate-img">
-                                                <img
-                                                    src="{{asset('preneur-lab-news/images/dashboard/home_10.jpg')}}"
-                                                    alt="thumb"
-                                                    class="img-fluid"
-                                                />
-                                            </div>
-                                            <div class="badge-positioned w-90">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center"
-                                                >
-                          <span
-                              class="badge badge-danger font-weight-bold"
-                          >National News</span
-                          >
-                                                    <div class="video-icon">
-                                                        <i class="mdi mdi-play"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div
-                                    class="d-flex justify-content-between align-items-center"
-                                >
-                                    <div class="card-title">
-                                        Latest Video
-                                    </div>
-                                    <p class="mb-3">See all</p>
-                                </div>
-                                <div
-                                    class="d-flex justify-content-between align-items-center border-bottom pb-2"
-                                >
-                                    <div class="div-w-80 mr-3">
-                                        <div class="rotate-img">
-                                            <img
-                                                src="{{asset('preneur-lab-news/images/dashboard/home_11.jpg')}}"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
-                                        </div>
-                                    </div>
-                                    <h3 class="font-weight-600 mb-0">
-                                        Apple Introduces Apple Watch
-                                    </h3>
-                                </div>
-                                <div
-                                    class="d-flex justify-content-between align-items-center border-bottom pt-3 pb-2"
-                                >
-                                    <div class="div-w-80 mr-3">
-                                        <div class="rotate-img">
-                                            <img
-                                                src="{{asset('preneur-lab-news/images/dashboard/home_12.jpg')}}"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
-                                        </div>
-                                    </div>
-                                    <h3 class="font-weight-600 mb-0">
-                                        SEO Strategy & Google Search
-                                    </h3>
-                                </div>
-                                <div
-                                    class="d-flex justify-content-between align-items-center border-bottom pt-3 pb-2"
-                                >
-                                    <div class="div-w-80 mr-3">
-                                        <div class="rotate-img">
-                                            <img
-                                                src="{{asset('preneur-lab-news/images/dashboard/home_13.jpg')}}"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
-                                        </div>
-                                    </div>
-                                    <h3 class="font-weight-600 mb-0">
-                                        Cycling benefit & disadvantag
-                                    </h3>
-                                </div>
-                                <div
-                                    class="d-flex justify-content-between align-items-center border-bottom pt-3 pb-2"
-                                >
-                                    <div class="div-w-80 mr-3">
-                                        <div class="rotate-img">
-                                            <img
-                                                src="{{asset('preneur-lab-news/images/dashboard/home_14.jpg')}}"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
-                                        </div>
-                                    </div>
-                                    <h3 class="font-weight-600">
-                                        The Major Health Benefits of
-                                    </h3>
-                                </div>
-                                <div
-                                    class="d-flex justify-content-between align-items-center pt-3"
-                                >
-                                    <div class="div-w-80 mr-3">
-                                        <div class="rotate-img">
-                                            <img
-                                                src="{{asset('preneur-lab-news/images/dashboard/home_15.jpg')}}"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
-                                        </div>
-                                    </div>
-                                    <h3 class="font-weight-600 mb-0">
-                                        Powerful Moments of Peace
-                                    </h3>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
