@@ -21,7 +21,7 @@
                                     {{$coronaUpdate['response']['results'][0]['fields']['trailText']}}
                                 </h1>
                                 <div class="fs-12">
-                                    <span></span>10 Minutes ago
+                                    <span></span>{{$coronaUpdate['response']['results'][0]['webPublicationDate']}}
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                         </a>
                                     </h6>
                                     <div class="fs-12">
-                                        <span class="mr-2">Photo </span>10 Minutes ago
+                                        <span class="mr-2">Photo </span>{{$item['webPublicationDate']}}
                                     </div>
                                 </div>
                                 <div class="rotate-img">
@@ -111,7 +111,7 @@
                                         </a>
                                     </h2>
                                     <div class="fs-13 mb-2">
-                                        <span class="mr-2"></span>10 Minutes ago
+                                        <span class="mr-2"></span>{{$item['webPublicationDate']}}
                                     </div>
                                     <p class="mb-0">
                                         {{$item['fields']['trailText']}}
@@ -179,7 +179,7 @@
                                                 {{$politics['response']['results'][0]['webTitle']}}
                                             </h2>
                                             <p class="fs-13 mb-1 text-muted">
-                                                <span></span>10 Minutes ago
+                                                <span></span>{{$politics['response']['results'][0]['webPublicationDate']}}
                                             </p>
                                             <p class="my-3 fs-15">
                                                 {{$politics['response']['results'][0]['fields']['trailText']}}
@@ -195,7 +195,7 @@
                                                 </a>
                                             </h3>
                                             <p class="fs-13 text-muted mb-0">
-                                                10 Minutes ago
+                                                {{$item['webPublicationDate']}}
                                             </p>
                                             <p class="mb-0 d-inline-block text-truncate" style="max-width: 150px;">
                                                 {{$item['fields']['trailText']}}
@@ -227,7 +227,7 @@
                                                     </a>
                                                 </p>
                                                 <p class="fs-13 text-muted mb-0">
-                                                    10 Minutes ago
+                                                    {{$item['webPublicationDate']}}
                                                 </p>
                                             </div>
                                         @endforeach
@@ -259,7 +259,7 @@
                                                                     </a>
                                                                 </p>
                                                                 <p class="fs-13 text-muted mb-0">
-                                                                    10 Minutes ago
+                                                                    {{$item['webPublicationDate']}}
                                                                 </p>
                                                                 <p class="mb-0 fs-13 d-inline-block text-truncate" style="max-width: 120px;">
                                                                     {{$item['fields']['trailText']}}

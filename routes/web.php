@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle')->name('google-login');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallBack');
 

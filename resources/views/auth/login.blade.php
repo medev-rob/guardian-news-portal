@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -63,6 +63,15 @@
                                     </a>
                                 @endif
                             </div>
+
+                            <div class="col-md-6 offset-md-4 text-center mt-3">
+                                <div class="font-weight-bold fs-16 text-dark mb-3">{{__('OR')}}</div>
+                                <a class="btn btn-info bg-white text-dark d-block" href="{{route('google-login')}}">
+                                    <img src="{{asset('preneur-lab-news/images/google_icon.png')}}" class="img-fluid mr-3" alt="Google Icon" style="width: 25px">
+                                    <span class="text-dark">Login With Google</span>
+                                </a>
+                            </div>
+
                         </div>
                     </form>
                 </div>
